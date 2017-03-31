@@ -5,18 +5,18 @@ var path = require("path");
 
 //Database Variables
 var mongoose = require("mongoose");
-// var mongoURI = "mongodb://localhost:27017/company";
-// var MongoDB = mongoose.connect(mongoURI).connection;
+var mongoURI = "mongodb://localhost:27017/realestate";
+var MongoDB = mongoose.connect(mongoURI).connection;
 
 
-// MongoDB.on("error", function(err){
-//   console.log("Mongo Connection Error :" + err);
-// });
-//
+MongoDB.on("error", function(err){
+  console.log("Mongo Connection Error :" + err);
+});
 
-// MongoDB.once("open", function(){
-//   console.log("Tots connected to Mongo, meow.");
-// });
+
+MongoDB.once("open", function(){
+  console.log("MongoDB is connected! Good Work!");
+});
 
 //Set the port
 app.set("port", (process.env.PORT || 5000));
