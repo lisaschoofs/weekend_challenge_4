@@ -26,6 +26,7 @@ MongoDB.once("open", function(){
 app.set("port", (process.env.PORT || 5000));
 
 //Routes
+app.use("/listings", listings);
 //base get
 app.get("/", function(req,res){
   res.sendFile(path.resolve("server/public/views/index.html"));
