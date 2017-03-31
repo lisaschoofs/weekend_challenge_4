@@ -1,7 +1,11 @@
+//General Modules
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var path = require("path");
+
+//Route Imports
+var listings = require("./routes/listings");
 
 //Database Variables
 var mongoose = require("mongoose");
