@@ -3,7 +3,7 @@ module.exports = function(grunt){
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       main: {
-        src: ["client/script/client.js"],
+        src: ["client/scripts/client.js"],
         dest: "server/public/script/client.min.js"
       }
     },
@@ -13,10 +13,16 @@ module.exports = function(grunt){
         cwd: "client/views/",
         src: ["index.html"],
         dest: "server/public/views/"
+      },
+      css: {
+      expand: true,
+      cwd: "client/views/",
+      src: ["style.css"],
+      dest: "server/public/views/"
       }
     },
     watch: {
-      files: ["client/script/*.js", "client/views/*.html"],
+      files: ["client/scripts/*.js", "client/views/*.html", "client/views/*.css"],
       tasks: ['uglify', 'copy']
     }
   });
