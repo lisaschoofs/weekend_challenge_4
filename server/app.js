@@ -25,6 +25,11 @@ MongoDB.once("open", function(){
 //Set the port
 app.set("port", (process.env.PORT || 5000));
 
+
+//Middleware hookups
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("./server/public/"));
+
 //Routes
 app.use("/listings", listings);
 //base get
@@ -32,9 +37,7 @@ app.get("/", function(req,res){
   res.sendFile(path.resolve("server/public/views/index.html"));
 });
 
-//Middleware hookups
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("./server/public/"));
+
 
 //Listen
 app.listen(app.get("port"), function(){

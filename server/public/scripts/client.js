@@ -19,9 +19,9 @@ function newRental() {
   $.ajax({
     type: "POST",
     url: "/listings",
-    data: {city: "test4",
-           sqft: 1004,
-           rent: 1004
+    data: {city: "test5",
+           sqft: 1005,
+           rent: 1005
           },
     success: function(response){
       // appendListings();
