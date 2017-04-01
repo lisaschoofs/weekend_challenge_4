@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 
 var RentSchema = mongoose.Schema({
   cost: Number,
+  // rent: Number,
   sqft: Number,
   city: String
 });
