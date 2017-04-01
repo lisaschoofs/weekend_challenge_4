@@ -18,7 +18,7 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         url: "/listings",
-        data: {city: city, sqft: sqft, price: price},
+        data: {type: type, city: city, sqft: sqft, price: price},
         success: function(response) {
           appendListings(response);
           console.log(response);

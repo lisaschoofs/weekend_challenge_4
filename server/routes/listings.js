@@ -30,25 +30,46 @@ router.get("/", function(req,res){
   });
 });
 
+// { type: 'Sale',
+//   city: 'St Louis Park',
+//   sqft: '500',
+//   price: '500000' }
+
 //POST new listing to Database
 router.post("/", function(req,res){
-
-  console.log(req.params);
+var listing;
   console.log(req.body);
-  var listing = new Rental();
+  if (req.body.type === "Rent") {
+    var rental = new Rental();
+    rental.city = req.body.city;
+    rental.sqft = parseInt(req.body.sqft);
+    rental.cost = parseInt(req.body.price);
 
-  listing.city = req.body.city;
-  listing.sqft = req.body.sqft;
-  listing.rent = req.body.rent;
+    rental.save(function(err, savedListing){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+  console.log(savedListing);
+      res.send(savedListing);
+    });
+  }//ends if
+  else {
+    var buy = new Buy();
 
-  listing.save(function(err, savedListing){
-    if(err){
-      console.log(err);
-      res.sendStatus(500);
-    }
-console.log(savedListing);
-    res.send(savedListing);
-  });
+    buy.city = req.body.city;
+    buy.sqft = parseInt(req.body.sqft);
+    buy.cost = parseInt(req.body.price);
+
+    buy.save(function(err, savedListing){
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }
+  console.log(savedListing);
+      res.send(savedListing);
+    });
+}//ends elses
 });
 
 
