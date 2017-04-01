@@ -4,12 +4,27 @@ $(document).ready(function() {
   // newRental();
   newListing();
 
-  $("#button").submit(function(e){
-        console.log('submit button clicked');
-    e.preventDefault();
+  $("#listingForm").on("submit", function(event){
+    event.preventDefault();
+    console.log('submit button clicked');
+    var type = $("#propertyType").val();
+    console.log(type);
+    var city = $("#cityInput").val();
+    console.log(city);
+    var sqft = $("#sqft").val();
+    console.log(sqft);
+    var price = $("#price").val();
 
-  });
-
+      $.ajax({
+        type: "POST",
+        url: "/listings",
+        data: {city: city, sqft: sqft, price: price},
+        success: function(response) {
+          appendListings(response);
+          console.log(response);
+        }//end success
+      }); //end ajax
+    }); //end listener
 });
 
 function appendListings(listings) {

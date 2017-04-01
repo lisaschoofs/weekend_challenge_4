@@ -2,3 +2,11 @@
   font-size: 100px;
   color: red;
 }*/
+
+h1 {
+  text-align: center;
+}
+
+.well {
+  padding: 10px;
+}
