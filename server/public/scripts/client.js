@@ -17,9 +17,12 @@ function getListings() {
 function appendListings(listings) {
 for(var i = 0; i < listings.length; i++){
   var listing = listings[i];
-  console.log(listings[i]);
+  console.log(listing);
   $("#listings").append("<div class='well col-md-3'></div>");
   var $el = $("#listings").children().last();
-  $el.append("<p>" + listings[i].city + "</p>");
+  $el.append("<p>" + listing.city + "</p>");
+  $el.append("<p>" + listing.cost + "</p>");
+  $el.append("<p>" + listing.rent+ "</p>");
+  $el.append("<p>" + listing.sqft + "</p>");
 }
 }
