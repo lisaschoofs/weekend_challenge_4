@@ -3,8 +3,9 @@
   color: red;
 }*/
 
-h1 {
+h1, h2{
   text-align: center;
+  padding: 10px;
 }
 
 .well {
@@ -13,16 +14,18 @@ h1 {
 
 #listingForm {
   display: none;
+  padding: 25px;
 }
 
-#addListing {
+#newListing {
   text-align: center;
+  padding: 25px;
 }
 
-#testR {
+/*#testR {
   color: red;
 }
 
 #testS {
   color: green;
-}
+}*/

@@ -43,24 +43,69 @@ function getListings() {
 
 function appendListings(listings) {
     $("#listings").empty();
-    for (var i = 0; i < listings.length; i++) {
+    for (var i = 0; i < listings.length ; i++) {
         var listing = listings[i];
-        // console.log(listing);
-        appendListing(listing);
+        if (listing.cost) {
+          appendSale(listing);
+        } else {
+          appendRental(listing);
+        }//ends else
   } //ends for loop
 } //ends appendListings
 
-function appendListing(listing) {
-  var $el = $("#listings").children().last();
-  if (listing.cost) {
-    $("#listings").append("<div class='well col-md-3' id='testS'></div>");
-    $el.append("<p> For Sale <p>" +
-    "<p> Cost: $" + listing.cost + "</p>");
-  } else {
-    $("#listings").append("<div class='well col-md-3' id='testR'></div>");
-    $el.append("<p> For Rent <p>" +
-    "<p> Rent : $" + listing.rent + "</p>");
-  } //ends else
+function appendRental(listing) {
+$("#rentalListings").append("<div class='well col-md-3'></div>");
+  var $el = $("#rentalListings").children().last();
   $el.append("<p>City: " + listing.city + "</p>");
   $el.append("<p>Square Footage: " + listing.sqft + "</p>");
-} //end appendListing function
+  $el.append("<p> For Rent <p>" + "<p> Rent : $" + listing.rent + "</p>");
+} //end appendRental function
+
+function appendSale(listing) {
+$("#saleListings").append("<div class='well col-md-3'></div>");
+  var $el = $("#saleListings").children().last();
+  $el.append("<p>City: " + listing.city + "</p>");
+  $el.append("<p>Square Footage: " + listing.sqft + "</p>");
+  $el.append("<p> For Sale <p>" + "<p> Cost: $" + listing.cost + "</p>");
+} //end appendSale function
+
+
+// function appendListings(listings) {
+//     $("#listings").empty();
+//     for (var i = 0; i < listings.length ; i++) {
+//         var listing = listings[i];
+//         console.log(listing);
+//         appendListing(listing);
+//   } //ends for loop
+// } //ends appendListings
+//
+// function appendListing(listing) {
+// $("#listings").append("<div class='well col-md-3'></div>");
+//   var $el = $("#listings").children().last();
+//   $el.append("<p>City: " + listing.city + "</p>");
+//   $el.append("<p>Square Footage: " + listing.sqft + "</p>");
+//   if (listing.cost) {
+//     $el.append("<p> For Sale <p>" +
+//     "<p> Cost: $" + listing.cost + "</p>");
+//   } else {
+//     $el.append("<p> For Rent <p>" +
+//     "<p> Rent : $" + listing.rent + "</p>");
+//   } //ends else
+// } //end appendListing function
+
+// function appendListing(listing) {
+//   // var $el = $("#listings");
+//   var $el = $("#listings").children().last();
+//   console.log(listing);
+//   if (listing.cost) {
+//     $("#listings").append("<div class='col-md-3' id='testS'></div>");
+//     $el.append("<p> For Sale <p>" +
+//     "<p> Cost: $" + listing.cost + "</p>");
+//   } else {
+//     $("#listings").append("<div class='col-md-3' id='testR'></div>");
+//     $el.append("<p> For Rent <p>" +
+//     "<p> Rent : $" + listing.rent + "</p>");
+//   } //ends else
+//   $el.append("<p>City: " + listing.city + "</p>");
+//   $el.append("<p>Square Footage: " + listing.sqft + "</p>");
+// } //end appendListing function

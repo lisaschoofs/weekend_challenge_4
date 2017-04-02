@@ -11,40 +11,71 @@
     <script type="text/javascript" src="/vendors/jquery.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
+
   <body>
+
     <div class="row">
       <div class="jumbotron">
         <h1> Weekend Challenge 4 </h1>
       </div>
     </div>
+
     <div class="container" id="newListing">
+
       <button type="button" class="btn btn-primary" id="addListing">Add A Listing</button>
+
       <form id="listingForm">
-        <div class="form-group">
+        <div class="row">
+        <div class="form-group col-md-6">
             <label for="propertyType">For Rent or For Sale?</label>
             <select class="form-control" id="propertyType">
             <option>Rental</option>
             <option>Sale</option>
           </select>
         </div>
-        <div class="form-group">
+
+        <div class="form-group col-md-6">
           <label for="city">City</label>
           <input type="text" class="form-control" id="cityInput" placeholder="City">
         </div>
-        <div class="form-group">
+        </div>
+
+        <div class="row">
+        <div class="form-group col-md-6">
           <label for="sqft">Square Feet</label>
           <input type="number" class="form-control" id="sqft" placeholder="Square Feet">
         </div>
-        <div class="form-group">
+
+        <div class="form-group col-md-6">
           <label for="price">Cost/Rent</label>
           <div class="input-group">
             <span class="input-group-addon" id="sizing-addon2">$</span>
           <input type="number" class="form-control" id="price" placeholder="price">
         </div>
-        </div>
+      </div>
+      </div>
+
         <button type="submit" class="btn btn-primary" id="submit">Submit</button>
       </form>
+
+
+    </div> <!-- closes newListing container -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2> Properties For Rent </h2>
+      </div>
     </div>
-    <div class="container" id="listings">
+    <div class="container" id="rentalListings">
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2> Properties For Sale </h2>
+      </div>
+    </div>
+    <div class="container" id="saleListings">
+    </div>
+    <script src="vendors/js/bootstrap.js"></script>
   </body>
 </html>
