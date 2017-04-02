@@ -10,3 +10,7 @@ h1 {
 .well {
   padding: 10px;
 }
+
+#listingForm {
+  display: none;
+}

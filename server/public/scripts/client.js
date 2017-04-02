@@ -24,7 +24,22 @@ $(document).ready(function() {
         }//end success
       }); //end ajax
     }); //end listener
+
+    $("#addListing").on("click", function() {
+      $( "#listingForm" ).toggle( 'slow' );
+    });//end on click function
 }); //end doc ready
+
+function getListings() {
+  $.ajax({
+    type: "GET",
+    url: "/listings",
+    success: function(response){
+      console.log(response);
+      appendListings(response);
+    }//end success
+  });//end ajax
+}//ends getListings
 
 function appendListings(listings) {
     $("#listings").empty();
@@ -48,14 +63,3 @@ function appendListing(listing) {
     "<p> Rent : $" + listing.rent + "</p>");
   } //ends else
 } //end appendListing function
-
-function getListings() {
-  $.ajax({
-    type: "GET",
-    url: "/listings",
-    success: function(response){
-      console.log(response);
-      appendListings(response);
-    }//end success
-  });//end ajax
-}//ends getListings
