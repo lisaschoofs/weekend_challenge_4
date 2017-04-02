@@ -51,15 +51,16 @@ function appendListings(listings) {
 } //ends appendListings
 
 function appendListing(listing) {
-  $("#listings").append("<div class='well col-md-3'></div>");
   var $el = $("#listings").children().last();
-  $el.append("<p>City: " + listing.city + "</p>");
-  $el.append("<p>Square Footage: " + listing.sqft + "</p>");
   if (listing.cost) {
+    $("#listings").append("<div class='well col-md-3' id='testS'></div>");
     $el.append("<p> For Sale <p>" +
     "<p> Cost: $" + listing.cost + "</p>");
   } else {
+    $("#listings").append("<div class='well col-md-3' id='testR'></div>");
     $el.append("<p> For Rent <p>" +
     "<p> Rent : $" + listing.rent + "</p>");
   } //ends else
+  $el.append("<p>City: " + listing.city + "</p>");
+  $el.append("<p>Square Footage: " + listing.sqft + "</p>");
 } //end appendListing function

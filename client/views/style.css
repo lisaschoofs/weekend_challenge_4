@@ -14,3 +14,15 @@ h1 {
 #listingForm {
   display: none;
 }
+
+#addListing {
+  text-align: center;
+}
+
+#testR {
+  color: red;
+}
+
+#testS {
+  color: green;
+}
