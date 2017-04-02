@@ -30,7 +30,7 @@ function appendListings(listings) {
     $("#listings").empty();
     for (var i = 0; i < listings.length; i++) {
         var listing = listings[i];
-        console.log(listing);
+        // console.log(listing);
         appendListing(listing);
   } //ends for loop
 } //ends appendListings
