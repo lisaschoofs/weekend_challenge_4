@@ -30,27 +30,23 @@ router.get("/", function(req,res){
   });
 });
 
-// { type: 'Sale',
-//   city: 'St Louis Park',
-//   sqft: '500',
-//   price: '500000' }
 
 //POST new listing to Database
 router.post("/", function(req,res){
-var listing;
+  var listing;
   console.log(req.body);
-  if (req.body.type === "Rent") {
+  if (req.body.type === "Rental") {
     var rental = new Rental();
     rental.city = req.body.city;
     rental.sqft = parseInt(req.body.sqft);
-    rental.cost = parseInt(req.body.price);
+    rental.rent = parseInt(req.body.price);
 
     rental.save(function(err, savedListing){
       if(err){
         console.log(err);
         res.sendStatus(500);
       }
-  console.log(savedListing);
+      console.log(savedListing);
       res.send(savedListing);
     });
   }//ends if
@@ -66,10 +62,10 @@ var listing;
         console.log(err);
         res.sendStatus(500);
       }
-  console.log(savedListing);
+      console.log(savedListing);
       res.send(savedListing);
     });
-}//ends elses
+  }//ends elses
 });
 
 
