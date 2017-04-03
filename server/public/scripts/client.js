@@ -27,13 +27,9 @@ function eventListeners() {
           console.log(response);
         }//end success
       }); //end ajax
+      //resets form on submit
       $("#listingForm").trigger('reset');
       $( "#listingForm" ).toggle( "slow" );
-      // $("#newListing").append("<div class='alert alert-success alert-dismissible'" +
-      //                     "role='alert'>Property Added!" +
-      //                     "<button type='button' class='close' data-dismiss='alert'" +
-      //                     " aria-label='Close'><span aria-hidden='true'>&times;" +
-      //                     "</span></button></div>");
     }); //end listener
 }//end form submit
 
@@ -60,6 +56,7 @@ function appendListings(listings) {
   } //ends for loop
 } //ends appendListings
 
+//append a single rental listing to the DOM
 function appendRental(listing) {
 $("#rentalListings").append("<div class='well col-md-3 col-xs-6'></div>");
   var $el = $("#rentalListings").children().last();
@@ -69,6 +66,7 @@ $("#rentalListings").append("<div class='well col-md-3 col-xs-6'></div>");
             "<p><b> For Rent </b><p>");
 } //end appendRental function
 
+//append a single sale listing to the DOM
 function appendSale(listing) {
 $("#saleListings").append("<div class='well col-md-3 col-xs-6'></div>");
   var $el = $("#saleListings").children().last();

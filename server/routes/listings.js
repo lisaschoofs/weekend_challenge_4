@@ -35,6 +35,7 @@ router.get("/", function(req,res){
 router.post("/", function(req,res){
   var listing;
   console.log(req.body);
+  //if/else to identify rental vs for sale property
   if (req.body.type === "Rental") {
     var rental = new Rental();
     rental.city = req.body.city;
