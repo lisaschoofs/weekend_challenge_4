@@ -1,17 +1,22 @@
 $(document).ready(function() {
-  console.log("jQuery ready to rock");
   getListings();
+  eventListeners();
+}); //end doc ready
+
+function eventListeners() {
+
+  $("#addListing").on("click", function() {
+    $( "#listingForm" ).toggle( "slow" );
+  });//end on click function
 
   $("#listingForm").on("submit", function(event){
     event.preventDefault();
     console.log('submit button clicked');
     var type = $("#propertyType").val();
-    console.log(type);
     var city = $("#cityInput").val();
-    console.log(city);
     var sqft = $("#sqft").val();
-    console.log(sqft);
     var price = $("#price").val();
+    console.log(type, city, sqft);
 
       $.ajax({
         type: "POST",
@@ -24,11 +29,7 @@ $(document).ready(function() {
         }//end success
       }); //end ajax
     }); //end listener
-
-    $("#addListing").on("click", function() {
-      $( "#listingForm" ).toggle( 'slow' );
-    });//end on click function
-}); //end doc ready
+}//end form submit
 
 function getListings() {
   $.ajax({
@@ -54,58 +55,19 @@ function appendListings(listings) {
 } //ends appendListings
 
 function appendRental(listing) {
-$("#rentalListings").append("<div class='well col-md-3'></div>");
+$("#rentalListings").append("<div class='well col-md-3 col-xs-6'></div>");
   var $el = $("#rentalListings").children().last();
-  $el.append("<p>City: " + listing.city + "</p>");
-  $el.append("<p>Square Footage: " + listing.sqft + "</p>");
-  $el.append("<p> For Rent <p>" + "<p> Rent : $" + listing.rent + "</p>");
+  $el.append("<p>Square Footage: " + listing.sqft + "</p>" +
+            "<p> Rent : $" + listing.rent + "</p>" +
+            "<p>City: " + listing.city + "</p>" +
+            "<p><b> For Rent </b><p>");
 } //end appendRental function
 
 function appendSale(listing) {
-$("#saleListings").append("<div class='well col-md-3'></div>");
+$("#saleListings").append("<div class='well col-md-3 col-xs-6'></div>");
   var $el = $("#saleListings").children().last();
-  $el.append("<p>City: " + listing.city + "</p>");
-  $el.append("<p>Square Footage: " + listing.sqft + "</p>");
-  $el.append("<p> For Sale <p>" + "<p> Cost: $" + listing.cost + "</p>");
+  $el.append("<p>Square Footage: " + listing.sqft + "</p>" +
+            "<p> Cost : $" + listing.cost + "</p>" +
+            "<p>City: " + listing.city + "</p>" +
+            "<p><b> For Sale </b><p>");
 } //end appendSale function
-
-
-// function appendListings(listings) {
-//     $("#listings").empty();
-//     for (var i = 0; i < listings.length ; i++) {
-//         var listing = listings[i];
-//         console.log(listing);
-//         appendListing(listing);
-//   } //ends for loop
-// } //ends appendListings
-//
-// function appendListing(listing) {
-// $("#listings").append("<div class='well col-md-3'></div>");
-//   var $el = $("#listings").children().last();
-//   $el.append("<p>City: " + listing.city + "</p>");
-//   $el.append("<p>Square Footage: " + listing.sqft + "</p>");
-//   if (listing.cost) {
-//     $el.append("<p> For Sale <p>" +
-//     "<p> Cost: $" + listing.cost + "</p>");
-//   } else {
-//     $el.append("<p> For Rent <p>" +
-//     "<p> Rent : $" + listing.rent + "</p>");
-//   } //ends else
-// } //end appendListing function
-
-// function appendListing(listing) {
-//   // var $el = $("#listings");
-//   var $el = $("#listings").children().last();
-//   console.log(listing);
-//   if (listing.cost) {
-//     $("#listings").append("<div class='col-md-3' id='testS'></div>");
-//     $el.append("<p> For Sale <p>" +
-//     "<p> Cost: $" + listing.cost + "</p>");
-//   } else {
-//     $("#listings").append("<div class='col-md-3' id='testR'></div>");
-//     $el.append("<p> For Rent <p>" +
-//     "<p> Rent : $" + listing.rent + "</p>");
-//   } //ends else
-//   $el.append("<p>City: " + listing.city + "</p>");
-//   $el.append("<p>Square Footage: " + listing.sqft + "</p>");
-// } //end appendListing function

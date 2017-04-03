@@ -1,8 +1,3 @@
-/*p {
-  font-size: 100px;
-  color: red;
-}*/
-
 h1, h2{
   text-align: center;
   padding: 10px;
@@ -10,6 +5,7 @@ h1, h2{
 
 .well {
   padding: 10px;
+  text-align: center;
 }
 
 #listingForm {
@@ -22,10 +18,10 @@ h1, h2{
   padding: 25px;
 }
 
-/*#testR {
-  color: red;
+.jumbotron {
+  background-color: lightskyblue;
 }
 
-#testS {
-  color: green;
-}*/
+.rentalListing {
+  border: solid gray 2px;
+}
