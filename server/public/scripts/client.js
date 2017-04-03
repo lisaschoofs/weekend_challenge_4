@@ -27,6 +27,13 @@ function eventListeners() {
           console.log(response);
         }//end success
       }); //end ajax
+      $("#listingForm").trigger('reset');
+      $( "#listingForm" ).toggle( "slow" );
+      // $("#newListing").append("<div class='alert alert-success alert-dismissible'" +
+      //                     "role='alert'>Property Added!" +
+      //                     "<button type='button' class='close' data-dismiss='alert'" +
+      //                     " aria-label='Close'><span aria-hidden='true'>&times;" +
+      //                     "</span></button></div>");
     }); //end listener
 }//end form submit
 
