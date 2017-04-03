@@ -19,7 +19,7 @@ var Buy = mongoose.model("Buy_Listing", BuySchema, 'listings');
 
 //GET listings
 router.get("/", function(req,res){
-  //Get all listings
+
   Rental.find(function(err, allListings){
     if(err){
       console.log(err);

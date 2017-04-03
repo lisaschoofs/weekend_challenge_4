@@ -16,14 +16,13 @@ function eventListeners() {
     var city = $("#cityInput").val();
     var sqft = $("#sqft").val();
     var price = $("#price").val();
-    console.log(type, city, sqft);
+    console.log(type, city, sqft, price);
 
       $.ajax({
         type: "POST",
         url: "/listings",
         data: {type: type, city: city, sqft: sqft, price: price},
         success: function(response) {
-          appendListing(response);
           getListings(response);
           console.log(response);
         }//end success
