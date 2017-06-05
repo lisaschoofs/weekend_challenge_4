@@ -1,23 +1,20 @@
-# Weekend Challenge 4 - Mongo and Bootstrap
+# Prime Digital Academy Assignment - Weekend Challenge 4
 
-Welcome to weekend challenge 4! This weekend, you will take on the role of an application developer for a real estate company. You will be working with Data that we will be providing to you. It will be a collection called “listings”. Inside of it, you will find information for properties that are either for Rent or for Sale.
+This assignment is hosted online [here](https://stormy-wave-34613.herokuapp.com/)!
 
-You job, is to get this Data on the DOM, accounting for the inconsistent datatypes that are possible with MongoDB. But additionally, let’s bring in Bootstrap to the mix to make sure that the application looks as good as possible.
+Our task for this assignment was to create a full stack application from the ground up utilizing using jQuery, Node, MongoDB, and Bootstrap. We were provided with property data, and tasked with displaying different property types in a meaningful way on the DOM. Additionally, we had to create a way for a user to add additional listings to the site. Finally, we needed to host the application using Heroku and mLabs.
 
-Here are the requirements of the project:
-* Create a Full Stack application from the ground up using jQuery, Node, and MongoDB,
-* Work with the data set that we provide for you,
-* Use Bootstrap to present the data,
-* Account for the different data (“rent” versus “cost) and ensure that this is noted on the display of the information, by listing “For Rent” or “For Sale” based on which of the two properties that it has.
+This challenge took place about halfway through my time at Prime Digital Academy.
 
-To work with the provided data:
-* Download the provided file,
-* Run this command in your Terminal: `mongoimport --db realestate --collection listings --file listingData.js`
-* Note that you will need to run this from the folder which you download the ‘listingData.js’ to.
+---
+## Technologies Used:
 
-## Hard Mode
-Create an interface for adding additional properties to the collection. You will need to give the user an option for either a Rent property, or a Sale property. Check out this Stack Overflow for information on how to accomplish this:
-http://stackoverflow.com/questions/14453864/use-more-than-one-schema-per-collection-on-mongodb
-
-## Pro Mode
-Host the application on Heroku and mLabs. You will need to transfer the data up to mLabs. In will need to research to accomplish this.
+- jQuery
+- MongoDB
+- Node.js
+- Express
+- Bootstrap
+- HTML 5
+- CSS 3
+- [Heroku](https://www.heroku.com/)
+- mLabs
